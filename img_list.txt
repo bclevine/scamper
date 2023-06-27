@@ -1,0 +1,3 @@
+image,weight,output_name
+data_hst/science/SCI_j8rq01020_drz.fits,data_hst/weights/WHT_j8rq01020_drz.fits,j8rq01020_drz.fits
+data_hst/science/SCI_j8rq02020_drz.fits,data_hst/weights/WHT_j8rq02020_drz.fits,j8rq02020_drz.fits

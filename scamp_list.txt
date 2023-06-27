@@ -1,0 +1,3 @@
+data_hsc/MACS0454-03_g_all.fits.cat
+data_hsc/MACS0454-03_r_all.fits.cat
+data_hsc/MACS0454-03_i_all.fits.cat
