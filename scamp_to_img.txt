@@ -1,0 +1,4 @@
+scamp_header,original_file
+data_hsc/MACS0454-03_g_all.fits.head,data_hsc/MACS0454-03_g_all.fits
+data_hsc/MACS0454-03_r_all.fits.head,data_hsc/MACS0454-03_r_all.fits
+data_hsc/MACS0454-03_i_all.fits.head,data_hsc/MACS0454-03_i_all.fits

@@ -15,7 +15,7 @@ def argument_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     # Where is the list of images to source extract?
-    result.add_argument("-c", dest="img_list", type=str, default="img_list.txt")
+    result.add_argument("-c", dest="img_list", type=str, default="catalog_from_img.txt")
     # Where should we place the extracted catalogs?
     result.add_argument("-d", dest="output_dir", type=str, default="catalogs.nosync")
 

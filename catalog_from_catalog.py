@@ -82,7 +82,9 @@ def argument_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     # Where is the list of catalogs to convert to LDAC?
-    result.add_argument("-c", dest="cat_list", type=str, default="catalog_list.txt")
+    result.add_argument(
+        "-c", dest="cat_list", type=str, default="catalog_from_catalog.txt"
+    )
     # Where should we place the extracted catalogs?
     result.add_argument("-d", dest="output_dir", type=str, default=None)
 
