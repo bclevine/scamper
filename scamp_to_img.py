@@ -17,7 +17,7 @@ def argument_parser():
     )
     # Where is the list of images to source extract?
     result.add_argument("-c", dest="header_list", type=str, default="scamp_to_img.txt")
-    result.add_argument("-f", dest="adjust_func", type=str, default="adjust_wcs_hst.py")
+    result.add_argument("-f", dest="adjust_func", type=str, default="adjust_wcs_hst")
 
     result.add_argument("-m", dest="multithread", type=bool, default=False)
     result.add_argument("-v", dest="verbose", type=bool, default=False)
@@ -47,7 +47,7 @@ def load_parameters(headerfile):
 
 if __name__ == "__main__":
     args = argument_parser().parse_args()
-    adjustment_func = import_module(f"{args.adjust_func}.adjust_wcs")
+    adjustment_func = import_module(args.adjust_func)
     img_list = setup_environment(args.header_list)
     for i in range(len(img_list)):
         if args.verbose:
@@ -55,4 +55,4 @@ if __name__ == "__main__":
                 f'---------------\nUpdating WCS for {img_list.iloc[i]["original_file"]}\n---------------'
             )
         pars = load_parameters(img_list.iloc[i]["scamp_header"])
-        adjustment_func(img_list.iloc[i]["original_file"], pars)
+        adjustment_func.adjust_wcs(img_list.iloc[i]["original_file"], pars)
