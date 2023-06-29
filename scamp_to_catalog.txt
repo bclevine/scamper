@@ -1,0 +1,3 @@
+scamp_header,original_file
+data_crawford/crawford_spec_original.fits.head,data_crawford/crawford_spec_original.fits.cat
+data_crawford/crawford_spec_ref_12.0.fits.head,data_crawford/crawford_spec_ref_12.0.fits.cat
