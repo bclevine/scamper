@@ -9,7 +9,7 @@ if __name__ == "__main__":
     config = configparser.ConfigParser()
     config.read("config.ini")
     directory = os.getcwd()
-    os.mkdir("SCAMPER_TEMP")
+    os.makedirs("SCAMPER_TEMP", exist_ok=True)
 
     # LOAD IMAGE LIST
     file_list = pd.read_csv(f"{directory}/{config['DEFAULT']['path_to_data']}")
