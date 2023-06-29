@@ -1,0 +1,3 @@
+input_catalog
+data_crawford/crawford_spec_original.fits
+data_crawford/crawford_spec_ref_12.0.fits
