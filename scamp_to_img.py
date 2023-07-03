@@ -16,7 +16,9 @@ def argument_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     # Where is the list of images to source extract?
-    result.add_argument("-c", dest="header_list", type=str, default="scamp_to_img.txt")
+    result.add_argument(
+        "-c", dest="header_list", type=str, default="config_txt_files/scamp_to_img.txt"
+    )
     result.add_argument("-f", dest="adjust_func", type=str, default="adjust_wcs_hst")
 
     result.add_argument("-m", dest="multithread", type=bool, default=False)

@@ -20,7 +20,7 @@ def prepare_input_catalog(data):
     # It literally does not matter what the template img is,
     # as long as it has a working WCS and you are consistent
     # when u use it later to convert back from the calibrated scamp output
-    with fits.open("template_img.fits") as hdul:
+    with fits.open("templates/template_img.fits") as hdul:
         header = hdul[0].header
     wcs_obj = wcs.WCS(header=header)
     out = wcs.utils.skycoord_to_pixel(coordlist, wcs_obj)
@@ -62,7 +62,7 @@ def update_template_values(template, data):
 
 
 def copy_to_template(data, output_name):
-    with fits.open("template_catalog.fits.cat") as n:
+    with fits.open("templates/template_catalog.fits.cat") as n:
         temp = n[2]
 
         if len(data) <= len(temp.data):
@@ -83,7 +83,10 @@ def argument_parser():
     )
     # Where is the list of catalogs to convert to LDAC?
     result.add_argument(
-        "-c", dest="cat_list", type=str, default="catalog_from_catalog.txt"
+        "-c",
+        dest="cat_list",
+        type=str,
+        default="config_txt_files/catalog_from_catalog.txt",
     )
     # Where should we place the extracted catalogs?
     result.add_argument("-d", dest="output_dir", type=str, default=None)

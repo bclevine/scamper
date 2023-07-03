@@ -32,7 +32,10 @@ def argument_parser():
     )
     # Where is the list of images to source extract?
     result.add_argument(
-        "-c", dest="header_list", type=str, default="scamp_to_catalog.txt"
+        "-c",
+        dest="header_list",
+        type=str,
+        default="config_txt_files/scamp_to_catalog.txt",
     )
 
     result.add_argument("-m", dest="multithread", type=bool, default=False)
@@ -49,7 +52,7 @@ def load_parameters(headerfile):
             par_dict[line.split()[0]] = line.split()[2][1:-1]
         elif line.split()[0] in WCS_pars_float:
             par_dict[line.split()[0]] = float(line.split()[2])
-    with fits.open("template_img.fits") as hdul:
+    with fits.open("templates/template_img.fits") as hdul:
         header = hdul[0].header
     par_dict["NAXIS1"] = header["NAXIS1"]
     par_dict["NAXIS2"] = header["NAXIS2"]

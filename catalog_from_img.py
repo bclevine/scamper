@@ -15,7 +15,9 @@ def argument_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     # Where is the list of images to source extract?
-    result.add_argument("-c", dest="img_list", type=str, default="catalog_from_img.txt")
+    result.add_argument(
+        "-c", dest="img_list", type=str, default="config_txt_files/catalog_from_img.txt"
+    )
     # Where should we place the extracted catalogs?
     result.add_argument("-d", dest="output_dir", type=str, default="catalogs.nosync")
 
@@ -44,7 +46,7 @@ def source_extract(directory, filename, weight_map, output_name, outputs):
             "sex",
             f"{directory}/{filename}",
             "-c",
-            "default.se",
+            "sextractor_config/default.se",
             "-CATALOG_NAME",
             f"{outputs}/{output_name}.cat",
             "-CATALOG_TYPE",

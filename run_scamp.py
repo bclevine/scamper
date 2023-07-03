@@ -16,7 +16,9 @@ def argument_parser():
     # Where is the reference catalog?
     result.add_argument("-r", dest="ref_cat", type=str)
     # Where is the list of catalogs to Scamp?
-    result.add_argument("-c", dest="cat_list", type=str, default="run_scamp.txt")
+    result.add_argument(
+        "-c", dest="cat_list", type=str, default="config_txt_files/run_scamp.txt"
+    )
 
     result.add_argument("-v", dest="verbose", type=bool, default=False)
 
